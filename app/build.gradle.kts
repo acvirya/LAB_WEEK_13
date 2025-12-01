@@ -9,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.test_lab_week_12"
+        applicationId = "com.example.test_lab_week_13"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -60,4 +60,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt (libs.androidx.room.compiler)
 }

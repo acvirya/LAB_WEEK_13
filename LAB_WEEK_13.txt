@@ -1,0 +1,54 @@
+1. MVVM penting untuk memisahkan UI dari logic dan data. Dengan memisahkannya, pengembangan aplikasi bisa lebih rapi dan skalabel. Selain itu, sangat mudah untuk mengubah UI tanpa mengganggu logic bisnis yang ada, mempermudah debugging dan mempermudah untuk bekerja dalam tim.
+
+File-file yang termasuk Model:
+- Movie.kt
+- MovieDao.kt
+- MovieDatabase.kt
+- MovieRepository.kt
+
+File-file yang termasuk View:
+- activity_main.xml
+- MainActivity.kt
+
+File-file yang termasuk ViewModel:
+- MovieViewModel.kt
+
+2. Data binding lebih efisien karena tidak perlu lagi findViewById atau manual set data ke view satu per satu. Cukup binding sekali lewat ActivityMainBinding dan variable viewModel di XML. Selain itu, perubahan data di MovieViewModel otomatis meng-update tampilan melalui app:list="@{viewModel.popularMovies}" dan @BindingAdapter("list").
+
+3. Singleton pada MovieDatabase penting karena Hanya ada satu instance Room database di seluruh aplikasi. Membuat beberapa instance database itu berat dan boros resource. Selain itu, singleton menjamin semua bagian aplikasi (Repository, Dao, dsb.) selalu menggunakan database yang sama, sehingga data konsisten.
+
+4. Repository Pattern penting untuk menyembunyikan detail sumber data dari ViewModel / View. ViewModel hanya tahu memanggil MovieRepository.fetchMovies() atau fetchMoviesFromNetwork(), tidak peduli itu dari API atau Room.
+
+5. Ada cara ain untuk refresh database dengan data terbaru selain dengan Worker:
+- Refresh manual oleh user (contoh ada tombol refresh atau fitur swipe to refresh di UI untuk fetch data manual.
+- Refresh tiap app atau halaman dibuka 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 
